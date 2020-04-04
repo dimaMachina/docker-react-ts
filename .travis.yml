@@ -12,7 +12,7 @@ script:
   - docker run -e CI=true b2o5t/react-ts yarn test
 
 deploy:
-  edge: true
+  edge: true # in order to use version v2 of deployment tooling
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY

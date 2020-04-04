@@ -9,7 +9,8 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-
+# expose 80 port for ElasticBeanstalck
+EXPOSE 80
 # copy `/app/build` folder from `builder` phase to nginx directory
 COPY --from=builder /app/build /usr/share/nginx/html
 
