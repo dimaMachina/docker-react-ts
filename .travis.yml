@@ -10,3 +10,16 @@ before_install:
 # CI=true allow run the test and exit from the image once the tests are completed
 script:
   - docker run -e CI=true b2o5t/react-ts yarn test
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: docker-react-ts
+  env: DockerReactTs-env
+  bucket_name: elasticbeanstalk-us-east-2-944179170239
+  bucket_path: docker-react-ts # by default path is equal app name
+  on:
+    branch: master # every time deploy when there is new code in master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
