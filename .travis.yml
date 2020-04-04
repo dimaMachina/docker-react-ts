@@ -1,0 +1,11 @@
+sudo: required # super user level permissions
+services:
+  - docker # docker cli pre-installed
+
+# series of commands before our test are run
+before_install:
+  - docker build -f Dockerfile.dev -t b2o5t/react-ts .
+
+# commands to run test suits
+script:
+  - docker run b2o5t/react-ts npm run test -- --coverage
