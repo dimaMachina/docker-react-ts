@@ -14,13 +14,13 @@ script:
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: $AWS_ACCESS_KEY
+    secure: '$AWS_ACCESS_KEY'
   secret_access_key:
-    secure: $AWS_SECRET_KEY
-  region: us-east-2
-  app: docker-react-ts
-  env: DockerReactTs-env
-  bucket_name: elasticbeanstalk-us-east-2-944179170239
+    secure: '$AWS_SECRET_KEY'
+  region: 'us-east-2'
+  app: 'docker-react-ts'
+  env: 'DockerReactTs-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-944179170239'
   # bucket_path: docker-react-ts # by default path is equal app name
   on:
     branch: master # every time deploy when there is new code in master
