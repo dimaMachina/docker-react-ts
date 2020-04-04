@@ -7,5 +7,6 @@ before_install:
   - docker build -f Dockerfile.dev -t b2o5t/react-ts .
 
 # commands to run test suits
+# CI=true allow run the test and exit from the image once the tests are completed
 script:
-  - docker run b2o5t/react-ts npm run test -- --coverage
+  - docker run -e CI=true b2o5t/react-ts yarn test
